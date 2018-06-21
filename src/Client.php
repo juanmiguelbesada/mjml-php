@@ -56,7 +56,7 @@ class Client
      * @throws Exception
      * @throws \RuntimeException
      */
-    private function request(string $path, string $method, string $body, array $headers = null, array $curlOptions = []): string
+    private function request(string $path, string $method, string $body, array $headers = null, array $curlOptions = []): array
     {
         if (!$headers) {
             $headers = [
