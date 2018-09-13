@@ -4,7 +4,7 @@ A simple php library to consume use MJML rest API
 
 ## Installation
 ```
-composer require juanmiguelbesada/mjml-php
+composer require juamiguelbesada/mjml-php
 ```
 
 ## How to use
