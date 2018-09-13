@@ -1,5 +1,5 @@
 {
-    "name": "juamiguelbesada/mjml-php",
+    "name": "juanmiguelbesada/mjml-php",
     "description": "A simple php library to consume use MJML rest API",
     "type": "library",
     "license": "MIT",
