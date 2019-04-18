@@ -4,7 +4,7 @@ namespace Mjml;
 
 class Client
 {
-    const ENDPOINT = 'https://api.mjml.io/v1';
+    private $endpoint;
 
     /**
      * @var string
@@ -22,10 +22,11 @@ class Client
      * @param string $applicationId
      * @param string $secretKey
      */
-    public function __construct(string $applicationId, string $secretKey)
+    public function __construct(string $applicationId, string $secretKey, string $endpoint = 'https://api.mjml.io/v1')
     {
         $this->applicationId = $applicationId;
         $this->secretKey = $secretKey;
+        $this->endpoint = $endpoint;
     }
 
     /**
@@ -73,7 +74,7 @@ class Client
             return sprintf('%s: %s', $key, $value);
         }, array_keys($headers), $headers);
 
-        $ch = curl_init(self::ENDPOINT.$path);
+        $ch = curl_init($this->endpoint.$path);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_USERPWD, sprintf('%s:%s', $this->applicationId, $this->secretKey));
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, strtoupper($method));
